@@ -8,8 +8,12 @@
     <p><%= @shoe.description %> </p>
   <p>  <h4>Size:</h4><%= @shoe.size %> </p>
 
+  <%= form_for @cart_item do |f| %>
+    <%= f.hidden_field :shoe_id, value: @shoe.id %>
+    <%= f.number_field :quantity %>
+    <%= f.submit "Add to cart" %>
+  <% end %></p>
 
-</div>
 
          </div>
        </div>

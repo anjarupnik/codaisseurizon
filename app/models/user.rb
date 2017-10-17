@@ -5,4 +5,17 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_one :cart, dependent: :destroy
+
+  has_one :profile, dependent: :destroy
+
+def has_profile?
+  profile.present? && profile.persited?
+end
+
+def full_name
+  profile.full_name
+end
+
+
+
 end

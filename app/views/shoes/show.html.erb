@@ -10,7 +10,10 @@
 
   <%= form_for @cart_item do |f| %>
     <%= f.hidden_field :shoe_id, value: @shoe.id %>
-    <%= f.number_field :quantity %>
+    <div class="form-group">
+    <label>Quantity:</label>
+    <%= f.select :quantity, options_for_select([1 , 2, 3]), class: "form-control" %>
+  </div>
     <%= f.submit "Add to cart" %>
   <% end %></p>
 

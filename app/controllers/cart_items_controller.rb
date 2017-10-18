@@ -1,13 +1,14 @@
 class CartItemsController < ApplicationController
-
+  before_action :authenticate_user!
 
   def create
     @cart = current_cart
-    @cart_item = CartItem.create(cart_item_params)
+    @cart_item = @cart.cart_items.new(cart_item_params)
+    @cart.save
 
     session[:cart_id] = @cart.id
 
-    redirect_to carts_path
+    redirect_to @cart
   end
 
 
@@ -16,7 +17,7 @@ class CartItemsController < ApplicationController
     @cart_item = CartItem.find(params[:id])
     @cart_item.destroy
     @cart.save
-    redirect_to carts_path
+    redirect_to @cart
   end
 
   private

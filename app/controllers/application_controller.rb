@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
     if session[:cart_id]
       Cart.find(session[:cart_id])
     else
-      Cart.new
+      Cart.new(user: current_user)
     end
   end
 

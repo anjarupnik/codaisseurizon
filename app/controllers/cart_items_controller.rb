@@ -1,16 +1,28 @@
 class CartItemsController < ApplicationController
-  before_action :set_cart, only: [:create, :destroy]
+
 
   def create
-    shoe = Shoe.find(params[:id])
-    @cart_item = CartItem.create(shoe: shoe)
+    @cart = current_cart
+    @cart_item = CartItem.create(cart_item_params)
+
+    session[:cart_id] = @cart.id
+
+    redirect_to carts_path
+  end
+
+
+  def destroy
+    @cart = current_cart
+    @cart_item = CartItem.find(params[:id])
+    @cart_item.destroy
+    @cart.save
+    redirect_to carts_path
   end
 
   private
-  def set_cart
-    @cart = Cart.find(session[:cart_id])
-  rescue ActiveRecord::RecordNotFound
-    @cart = Cart.create
-    session[:cart_id] = @cart.id
-  end
+
+  def cart_item_params
+      params.require(:cart_item).permit(:quantity, :shoe_id)
+    end
+
 end

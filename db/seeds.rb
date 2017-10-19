@@ -8,8 +8,6 @@ User.destroy_all
 user1 = User.create!(email: "igotthesauce@noketchup.com", password: "123456")
 user2 = User.create!(email: "2plus2izfour@noketchup.com", password: "654321")
 
-cart = Cart.create!(user: user1)
-
 shoe2 = Shoe.create!( name: "Bobby", price: rand(50) + 20, size: 43, description: "What a delightful shoe!", gender: "men's")
 shoe3 = Shoe.create!( name: "Melissa", price: rand(50) + 20, size: 38, description: "We're sure this is the shoe for you!", gender: "women's")
 shoe4 = Shoe.create!( name: "Midnight Rider", price: rand(50) + 20, size: 38, description: "At this price we're practically giving it away!", gender: "men's")

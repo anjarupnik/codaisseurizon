@@ -1,21 +1,31 @@
-<div class="panel panel-info">
+<div class="panel panel-default">
   <div class="panel-heading"><h4><%= @shoe.name %></h4></div>
 
   <div class="panel-body">
+    <div class="img">
+      <%= image_tag @shoe.photo.image.thumbnail %>
+    </div>
+   <hr />
+   <h4>Price: <%= @shoe.price %> €</h4>
 
-    <h4>Price: <%= @shoe.price %></h4>
-    <h4>Description: </h4>
-    <p><%= @shoe.description %> </p>
-  <p>  <h4>Size:</h4><%= @shoe.size %> </p>
+    <h4>Size:<%= @shoe.size %> </h4>
 
   <%= form_for @cart_item do |f| %>
     <%= f.hidden_field :shoe_id, value: @shoe.id %>
-    <div class="form-group">
-    <label>Quantity:</label>
-    <%= f.select :quantity, options_for_select([1 , 2, 3]), class: "form-control" %>
-  </div>
-    <%= f.submit "Add to cart" %>
-  <% end %></p>
+    <div class="panel-footer">
+      <div class="form-group">
+      <label>Quantity:</label>
+      <%= f.select :quantity, options_for_select([1 , 2, 3]), class: "form-control" %>
+      </div>
+      <button id ="profilebtn" type="button" class="btn btn-default btn-lg" style = "margin-top:0;">
+        <%= f.submit "Add to cart" %>
+        <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true">
+      </button>
+
+
+
+     </div>
+    <% end %>
 
 
          </div>

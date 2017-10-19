@@ -1,17 +1,16 @@
+  <section class="gallery">
   <% @shoes.each do |shoe| %>
-<div class="panel panel-info">
+     <article class="card">
+        <div class="img">
+          <%= image_tag shoe.photo.image.thumbnail %>
+        </div>
+        <div class="shoetext">
+      <h2 style = "text-decoration: none; text-align:center; "><%= link_to shoe.name, shoe %></h2>
+        <p><%= shoe.description %> </p>
+        <p id="price">Price: </h4><%= shoe.price%> €</p>
+  </div>
+      </article>
+   <% end %>
+</section>
 
-  <div class="panel-heading">
-  <h3><%= image_tag shoe.photo.image.thumbnail %></h3>
-  <h4><%= link_to shoe.name, shoe %></h4></div>
-</div>
-<div class="panel-body">
-
-
-
-
-    <h4>Size: <%= shoe.size %></h4>
-    <h4>Shoe description: </h4>
-    <p><%= shoe.description %> </p>
-  <p>  <h4>Price:</h4><%= shoe.price %> </p>
-  <% end %>
+<div style="height: 30px;"> </div>

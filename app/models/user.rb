@@ -9,7 +9,7 @@ class User < ApplicationRecord
   has_one :profile, dependent: :destroy
 
 def has_profile?
-  profile.present? && profile.persited?
+  profile.present? && profile.persisted?
 end
 
 def full_name

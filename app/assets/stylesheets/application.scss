@@ -1,2 +1,51 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+.navbar  {
+  background-color: #222;
+    border-color: #080808;
+    box-shadow: 0 0 5px rgba(0,0,0,.8);
+    padding: 20px 0 0px 0;
+    margin-bottom: 0;
+
+}
+.navbar-brand {
+  font-size: 80px;
+  padding-left: 0px;
+  margin-left: 0px;
+  padding-top: 15px;
+  font-family: 'Concert One', cursive;
+}
+
+.navbar-default .navbar-brand {
+    color: #d6d6d6;
+}
+
+#login {
+  margin-top: 30px;
+  margin-bottom: 0;
+  a {
+    font-size: 18px;
+  }
+  a:hover {
+  color: white;
+}
+}
+
+#profilebtn {
+  margin-top: 30px;
+  margin-bottom: 0;
+}
+
+#profilemenu {
+  margin-top: 53px;
+  margin-bottom: 0;
+  height: 5px;
+}
+
+.caret{
+  border-left: 8px solid transparent;
+   border-right: 8px solid transparent;
+   border-top: 8px solid #000000;
+   margin-left: 0;
+}

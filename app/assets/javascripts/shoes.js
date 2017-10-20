@@ -1,8 +1,9 @@
 function createItem(event) {
   event.preventDefault();
+
   $.ajax({
   type: "POST",
-  url: "/todos.json",
+  url: "/cart/" + current_cart.id ".json",
   data: JSON.stringify({
     todo: newTodo
   }),

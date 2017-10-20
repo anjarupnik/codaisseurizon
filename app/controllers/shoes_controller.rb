@@ -9,11 +9,14 @@ class ShoesController < ApplicationController
    end
 
     @shoes = Shoe.all
+
   end
 
   def show
     @shoe = Shoe.find(params[:id])
     @cart_item = current_cart.cart_items.new
+    render json: @shoe
+  
   end
 
 end

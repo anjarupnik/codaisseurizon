@@ -9,6 +9,4 @@ private
     self.total = cart_items.collect { |item| item.shoe.price * item.quantity }.sum
   end
 
-
-
-end
+ end

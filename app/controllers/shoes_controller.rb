@@ -6,11 +6,10 @@ class ShoesController < ApplicationController
       return @shoes = Shoe.all.sort_price_desc if params[:sort] == "price_desc"
       return @shoes = Shoe.all.sort_size_asc if params[:sort] == "size_asc"
       return @shoes = Shoe.all.sort_size_desc if params[:sort] == "size_desc"
+
    end
-
-    @shoes = Shoe.all
-
-  end
+     @shoes = Shoe.search(params[:search])
+ end
 
   def show
     @shoe = Shoe.find(params[:id])

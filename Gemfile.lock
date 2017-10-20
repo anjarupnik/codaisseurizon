@@ -163,6 +163,7 @@ GEM
       nokogiri (>= 1.6)
     rails-html-sanitizer (1.0.3)
       loofah (~> 2.0)
+    rails-simple-search (1.1.7)
     railties (5.1.4)
       actionpack (= 5.1.4)
       activesupport (= 5.1.4)
@@ -264,6 +265,7 @@ DEPENDENCIES
   pg (~> 0.18)
   puma (~> 3.7)
   rails (~> 5.1.4)
+  rails-simple-search
   rspec-rails (~> 3.5, >= 3.5.2)
   sass-rails (~> 5.0)
   spring

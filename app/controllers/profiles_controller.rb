@@ -21,7 +21,7 @@ class ProfilesController < ApplicationController
 
    def update
      if @profile.update(profile_params)
-       redirect_to root_path, notice: "Profile successfully updated"
+       redirect_to root_path, :flash => { :notice => "profile updated" }
      else
        render :edit
      end

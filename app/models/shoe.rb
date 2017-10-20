@@ -6,4 +6,12 @@ has_one :photo
   scope :sort_price_desc, -> {order(price: :desc)}
   scope :sort_size_asc,   -> {order(size: :asc)}
   scope :sort_size_desc,  -> {order(size: :desc)}
+
+  def self.search(search)
+    if search
+      where(["name LIKE?", "%#{search}%"])
+    else
+      all
+  end
+end
 end

@@ -9,12 +9,15 @@ class ShoesController < ApplicationController
 
    end
      @shoes = Shoe.search(params[:search])
+     @cart = current_cart
+     @cart_items = @cart.cart_items
  end
 
   def show
     @shoe = Shoe.find(params[:id])
     @cart_item = current_cart.cart_items.new
-    
+    @cart = current_cart
+    @cart_items = @cart.cart_items
 
   end
 

@@ -1,19 +1,23 @@
 <div class="dropdown show">
-  <a class="btn btn-default dropdown-toggle"  id="dropdownMenuLink" data-toggle="dropdown"
+  <hr>
+  <a class="btn btn-success dropdown-toggle"  id="dropdownMenuLink" data-toggle="dropdown"
     aria-haspopup="true" aria-expanded="false">
-    Welcome to Shoeland
+    Sort
   </a>
+<hr>
 <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-  <li><a class="dropdown-item" >  <%= link_to "Sort: I'm cheap", shoes_path(sort: "price_asc") %></a></li>
-  <li><a class="dropdown-item" >  <%= link_to "Sort: I have money ", shoes_path(sort: "price_desc") %></a></li>
-  <li><a class="dropdown-item" >  <%= link_to "Sort: Tiny feet", shoes_path(sort: "size_asc") %></a></li>
-  <li><a class="dropdown-item" >  <%= link_to "Sort: Bigfoot", shoes_path(sort: "size_desc") %></a></li>
+  <li><a class="dropdown-item" >  <%= link_to "Price Low-High", shoes_path(sort: "price_asc") %></a></li>
+  <li><a class="dropdown-item" >  <%= link_to "Price High-Low ", shoes_path(sort: "price_desc") %></a></li>
+  <li><a class="dropdown-item" >  <%= link_to "Size Small-Big", shoes_path(sort: "size_asc") %></a></li>
+  <li><a class="dropdown-item" >  <%= link_to "Size Big-Small", shoes_path(sort: "size_desc") %></a></li>
 </ul>
 </div>
+<hr>
 <div>
 <%= form_tag(shoes_path, :method => "get", id: "search-form") do %>
 <%= text_field_tag :search, params[:search], placeholder: "Search Shoes"%>
 <%= submit_tag "Search" %>
+
 <% end %>
 
 </div>

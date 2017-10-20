@@ -8,5 +8,11 @@ class CartsController < ApplicationController
     @cart_items = current_cart.cart_items
   end
 
+  def destroy
+    @cart = current_cart
+    @cart.destroy
+    redirect_to root_path
+  end
+
 
 end

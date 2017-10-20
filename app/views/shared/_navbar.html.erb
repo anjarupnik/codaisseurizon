@@ -19,9 +19,13 @@
         <% else %>
           <li class="dropdown">
         <button id ="profilebtn" type="button" class="btn btn-default btn-lg" style="position:absolute; margin-left: -100px;">
+          <% if @cart_items != nil %>
+          <%= link_to @cart_items.count, cart_path(current_user.id) %>
+          <% else %>
           <%= link_to "My Cart", cart_path(current_user.id) %>
-          <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true">
-        </button>
+          <% end %>
+            <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true">
+                  </button>
 
   <a  href="#" class="dropdown-toggle"  data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
   <li id="login"> <%= current_user.has_profile? ? current_user.full_name : current_user.email  %></li>

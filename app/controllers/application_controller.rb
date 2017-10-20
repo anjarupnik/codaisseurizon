@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
 
 
     def current_cart
-      Cart.find_by(id: session[:cart_id]) || Cart.new(user: current_user)
+      Cart.find_by(id: session[:cart_id]) || ((Cart.destroy_all) && (Cart.new(user: current_user)))
     end
 
 

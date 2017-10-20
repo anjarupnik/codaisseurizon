@@ -6,6 +6,8 @@ class CartsController < ApplicationController
     @cart.save
     session[:cart_id] = @cart.id
     @cart_items = current_cart.cart_items
+
+    
   end
 
   def destroy

@@ -8,7 +8,12 @@ class CartItemsController < ApplicationController
 
     session[:cart_id] = @cart.id
 
-    redirect_to @cart
+    respond_to do |format|
+              format.html { redirect_to shoes_path}
+              format.json { render json: @cart }
+
+          end
+
   end
 
 
